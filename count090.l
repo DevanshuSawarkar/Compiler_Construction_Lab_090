@@ -9,9 +9,9 @@ return 0;
 }
 %}
 %%
-"/*"([^*]|\*+[^/])*"*"+"/" { commentCount++; characterCount += yyleng; }
+"/*"(.|\n)*?"*/" { commentCount++; characterCount += yyleng; }
 "//".* { commentCount++; characterCount += yyleng; }
-[a-zA-Z_][a-zA-Z0-9_]* { characterCount += yyleng; wordCount++; if(isKeyword(yytext)) keywordCount++; else identifierCount++ }
+[a-zA-Z_][a-zA-Z0-9_]* { characterCount += yyleng; wordCount++; if(isKeyword(yytext)) keywordCount++; else identifierCount++; }
 " " { spaceCount++; characterCount += yyleng; }
 "\t" { tabCount++; characterCount += yyleng; }
 "\n" { lineCount++; characterCount += yyleng; }
