@@ -1,7 +1,7 @@
 - How to compile a lEX file:
   ```
   lex lex_file_name.l
-  xx lex.yy.c -ll
+  cc lex.yy.c -ll
   ./a.out
   ```
 
